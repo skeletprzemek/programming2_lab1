@@ -13,13 +13,14 @@ A2: The condition if(Character.isDigit(c));
 A3: After the loop is finished and it reaches the end of the text.
 
 Part C: Answers
-A1: 
+A1: Because 
 */
 
 public class Main {
-    public static void main(){
-    System.out.println(checkPassword("VANIER2026"));
-    System.out.println(countDigits("Vanier2026"));
+    public static void main(String[] args) {
+    String password = "Vanier2026";
+    System.out.println(checkPassword(password));
+    System.out.println(countDigits(password));
     }
     public static boolean checkPassword(String password){
 
@@ -46,10 +47,10 @@ public class Main {
             */
             return upper && lower && digit;
     }
-    public static int countDigits(String text) {
+    public static int countDigits(String password) {
         int count = 0;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
 
             if (Character.isDigit(c))
                 count++;
@@ -70,6 +71,8 @@ public class Main {
             else if (Character.isDigit(c))
                 digit = true;
             else if( upper && lower && digit)
+                isValid = true;
+            else if(password.length() >= 7)
                 isValid = true;
             else
                 isValid = false;
