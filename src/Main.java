@@ -13,7 +13,10 @@ A2: The condition if(Character.isDigit(c));
 A3: After the loop is finished and it reaches the end of the text.
 
 Part C: Answers
-A1: Because 
+A1: Because it is simpler and more efficientto check if the password even has required symbols than counting them not knowing if they are present.
+
+Part D: Answers
+A1: Expected result - 1, 6, 0, 2, 0
 */
 
 public class Main {
@@ -21,6 +24,7 @@ public class Main {
     String password = "Vanier2026";
     System.out.println(checkPassword(password));
     System.out.println(countDigits(password));
+    System.out.println(countUppercase(password));
     }
     public static boolean checkPassword(String password){
 
@@ -70,16 +74,18 @@ public class Main {
                 lower = true;
             else if (Character.isDigit(c))
                 digit = true;
-            else if( upper && lower && digit)
-                isValid = true;
-            else if(password.length() >= 7)
-                isValid = true;
-            else
-                isValid = false;
         }
-            return isValid;
-
-        
+        isValid = upper && lower && digit && password.length() >= 7;
+        return isValid;
 
     }
+    public static int countUppercase(String password) {
+        int count = 0;
+        for (int i = 0; i < password.length(); i++) {
+        if (Character.isUpperCase(password.charAt(i)))
+            count++;
+    }
+        return count;
 }
+}
+
