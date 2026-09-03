@@ -17,9 +17,6 @@ A1: Because it is simpler and more efficientto check if the password even has re
 
 Part D: Answers
 A1: Expected result - 1, 6, 0, 2, 0
-
-Part E: Answers
-A1:
 */
 import java.util.Random;
 
@@ -93,12 +90,13 @@ public class Main {
         return count;
 }
 public static String generateCode(){     /* finish Up */
-    Random rand = new Random();
     String allowed = "ABCDE";
-    for (int i = 0; i < 5; i++) {
-        int index = rand.nextInt(5);
+    String result = "";
+    Random rand = new Random();
+    for (int i = 0; i < 4; i++) {
+        result = result + allowed.charAt(rand.nextInt(5));
     }
-    return allowed;
+    return result;
 }
 }
 
