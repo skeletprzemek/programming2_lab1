@@ -34,8 +34,5 @@ public class MainTest {
         String code = StudentAccessValidator.generateAccessCode();
         assertNotNull(code);
         assertEquals(4, code.length());
-
-        
-
     }
 }

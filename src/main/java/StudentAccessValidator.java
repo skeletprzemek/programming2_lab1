@@ -1,8 +1,8 @@
-package main.java;
 import java.util.Random;
 
 public class StudentAccessValidator {
     String id = "V123456";
+
 
     public static boolean isValidStudentId(String id) {
         boolean validId = false;
