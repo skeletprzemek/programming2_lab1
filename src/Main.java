@@ -17,6 +17,13 @@ A1: Because it is simpler and more efficientto check if the password even has re
 
 Part D: Answers
 A1: Expected result - 1, 6, 0, 2, 0
+
+Part G: Answers
+A1: Because the first character in the text could be a digit.
+A2: The method returns true.
+A3: The method returns false.
+A4: Because we are looking for a boolean, either it contains a digit or not, no matter the quantity.
+A5: The method returns false.
 */
 import java.util.Random;
 
@@ -98,6 +105,13 @@ public static String generateCode(){     /* finish Up */
     }
     return result;
 }
+
+
+
+
+
+
+
 }
 
 
