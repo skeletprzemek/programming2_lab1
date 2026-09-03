@@ -1,23 +1,23 @@
+import java.util.Random;
+
 public class StudentAccessValidator {
     String id = "V123456";
-    validId = false;
 
-    public static boolean isValidStudentId(String id){
-         for (int i = 0; i < id.length(); i++) {
-            char c = id.charAt(i);
-            if (id.charAt(0)!= "V")
-                validId = false;
-            if (Character.isDigit(1, 6))
-                validId = true;
-            if (id.length() != 6)
-                validId = false;
-            else
-                validId = false;
+    public static boolean isValidStudentId(String id) {
+        boolean validId = false;
+        if (id.charAt(0) != 'V')
+            validId = false;
+        if (id.length() != 6)
+            validId = false;
+        for (int i = 1; i < id.length(); i++) {
+            if (!Character.isDigit(id.charAt(i))) {
+                return false;
+            }
         }
         return validId;
     }
 
-    public static boolean isValidPassword(String password){
+    public static boolean isValidPassword(String password) {
         boolean upper = false;
         boolean lower = false;
         boolean digit = false;
@@ -35,7 +35,7 @@ public class StudentAccessValidator {
         return validPassword;
     }
 
-    public static String generateAccessCode(){
+    public static String generateAccessCode() {
         String allowed = "ABCDE";
         String result = "";
         Random rand = new Random();
@@ -45,14 +45,9 @@ public class StudentAccessValidator {
         return result;
     }
 
-    public static boolean isValidAccess(String id, String password){
-        validAccess = false;
-        if (id.isValidStudentId() && password.isValidPassword())
-            validAccess = true;
-        else
-            validAccess = false;
-        }
-        return validAccess;
+    public static boolean isValidAccess(String id, String password) {
+        return isValidStudentId(id) && isValidPassword(password);
     }
+}
 
 
