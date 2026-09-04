@@ -1,9 +1,6 @@
-package test.java;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-import main.java.Main;
-import main.java.StudentAccessValidator;
 
 
 public class MainTest {

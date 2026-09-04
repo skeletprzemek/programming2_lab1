@@ -1,4 +1,3 @@
-package main.java;
 /*
 Part A: Answers
 A1: "true" on four separate lines.
@@ -36,6 +35,7 @@ public class Main {
     System.out.println(countUppercase(password));
     System.out.println(generateCode());
     }
+    
     public static boolean checkPassword(String password){
 
         boolean upper = false;
