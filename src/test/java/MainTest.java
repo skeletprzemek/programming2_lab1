@@ -1,17 +1,17 @@
+package test.java;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import main.java.Main;
 import main.java.StudentAccessValidator;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 
 public class MainTest {
 
     @Test
     void countDigits() {
-        assertEquals(3, Main.countDigits("abc123"));
-        assertEquals(5, Main.countDigits("13579"));
+        assertEquals(3, Main.countDigits("van123"));
+        assertEquals(5, Main.countDigits("74513"));
         assertEquals(0, Main.countDigits("abcdef"));
     }
 
