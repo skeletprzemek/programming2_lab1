@@ -24,6 +24,18 @@ A2: The method returns true.
 A3: The method returns false.
 A4: Because we are looking for a boolean, either it contains a digit or not, no matter the quantity.
 A5: The method returns false.
+
+Part J: method countDigits()
+A1: Password (Vanier2026)
+A2: Number of digits in the password (4)
+A3: It expects to check for numbers between 0 and 9.
+A4: Edge case is an empty string because it will give false as a result.
+A5: Adding a possibility to give the result of false if the input is null instead of giving an error.
+A6: The null test. All other inputs will give a false result, but null will give an error.
+
+Responsible AI activity:
+Useful suggestion - fix the NullPointerException error causing program to crash.
+Suggestion I didn't blindly accept - my method " counts accented international characters (like É, Ç, or Ω) as uppercase."
 */
 import java.util.Random;
 
