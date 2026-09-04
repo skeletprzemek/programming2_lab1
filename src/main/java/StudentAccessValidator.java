@@ -3,6 +3,13 @@ import java.util.Random;
 
 public class StudentAccessValidator {
     String id = "V123456";
+
+     public static boolean verifyAccessCode(String generatedCode, String enteredCode) {
+        if (generatedCode == null || enteredCode == null) {
+            return false;
+        }
+        return generatedCode.equals(enteredCode);
+    }
     
 
     public static boolean isValidStudentId(String id) {
@@ -47,8 +54,8 @@ public class StudentAccessValidator {
         return result;
     }
 
-    public static boolean isValidAccess(String id, String password) {
-        return isValidStudentId(id) && isValidPassword(password);
+    public static boolean isValidAccess(String id, String password, String generatedCode, String enteredCode) {
+        return isValidStudentId(id) && isValidPassword(password) && verifyAccessCode(generatedCode, enteredCode);
     }
 }
 

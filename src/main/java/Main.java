@@ -30,11 +30,33 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
     String password = "Vanier2026";
+    String studentId = "V12345";
     System.out.println(checkPassword(password));
     System.out.println(countDigits(password));
     System.out.println(countUppercase(password));
     System.out.println(generateCode());
+
+    String systemGeneratedCode = StudentAccessValidator.generateAccessCode();
+    String studentEnteredCode = systemGeneratedCode;
+    String studentWrongCodeInput = systemGeneratedCode.toLowerCase();
+
+     boolean testSuccessfulAccess = StudentAccessValidator.isValidAccess(
+            studentId, 
+            password, 
+            systemGeneratedCode, 
+            studentEnteredCode
+        );
+        System.out.println("Access approved " + testSuccessfulAccess); 
+
+        boolean testFailedAccess = StudentAccessValidator.isValidAccess(
+            studentId, 
+            password, 
+            systemGeneratedCode, 
+            studentWrongCodeInput
+        );
+        System.out.println("Access denied" + testFailedAccess); 
     }
+    
     
     public static boolean checkPassword(String password){
 
